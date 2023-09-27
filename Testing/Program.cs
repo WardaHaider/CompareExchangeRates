@@ -46,7 +46,7 @@ namespace Testing
                         //Console.WriteLine($"Key: {rate.Key}, Value: {rate.Value}");
                     }
                 }
-                Console.WriteLine(chlVals);
+                //Console.WriteLine(chlVals);
                 chart(chlVals, chdVals);
             }
             catch (Exception e)
@@ -89,8 +89,6 @@ namespace Testing
 
                 dynamic result = await chartController.GetChartAsync(cht, chl, chd, chs, null, null, null, null, null, chof, chdl, chdls, null, chco, chtt, null, chxt, chxl, chxs, null, null, null, null, chdlp, chf, chbh, chbr, null, null, null, null, null, null, null, icwt, null, icqrb, icqrf);
 
-                //dynamic result = await chartController.GetChartAsync(cht, chl, chd, chs, null, null, null, null, null, chof, null, chdls, null, chco, null, null, null, null, null, null, null, null, null, chdlp, chf, chbh, chbr, null, null, null, null, null, null, null, icwt, null, icqrb, icqrf);
-                Console.WriteLine(result);
                 using (var fileStream = new FileStream(outputPath, FileMode.Create))
                 {
                     result.CopyTo(fileStream);
